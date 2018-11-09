@@ -1,3 +1,0 @@
-#/secure/daemon/events.c
-RebootInterval 24
-Events ([1541808525:(["object":"/secure/daemon/file","regular":90000,"interval":90000,"args":({}),"function":"ReadDir","creator":"/secure/daemon/file",]),1541829017:(["object":"/secure/daemon/function","regular":100000,"interval":100000,"args":({}),"function":"ReadFuns","creator":"/secure/daemon/function",]),1541736648:(["object":"/secure/daemon/log","regular":3600,"interval":3600,"args":({}),"function":"RotateLogs","creator":"/secure/daemon/log",]),])
