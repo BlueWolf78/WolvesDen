@@ -1,0 +1,60 @@
+BWTest received 2 training points at Wed Nov  7 08:59:10 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received -1 training points at Wed Nov  7 09:10:00 2018
+call chain: ({ /* sizeof() == 1 */
+  /domains/town/npc/bugg#1041
+})
+BWTest received 3 training points at Wed Nov  7 09:19:01 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received -1 training points at Wed Nov  7 09:28:55 2018
+call chain: ({ /* sizeof() == 1 */
+  /domains/town/npc/bugg#1041
+})
+BWTest received -1 training points at Wed Nov  7 09:29:30 2018
+call chain: ({ /* sizeof() == 1 */
+  /domains/town/npc/bugg#1041
+})
+BWTest received -1 training points at Wed Nov  7 09:30:47 2018
+call chain: ({ /* sizeof() == 1 */
+  /domains/town/npc/bugg#1041
+})
+BWTest received -1 training points at Wed Nov  7 09:32:09 2018
+call chain: ({ /* sizeof() == 1 */
+  /domains/town/npc/bugg#1041
+})
+BWTest received 4 training points at Wed Nov  7 09:47:30 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received 2 training points at Wed Nov  7 10:31:02 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received 3 training points at Wed Nov  7 10:32:03 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received 4 training points at Wed Nov  7 10:32:06 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received 5 training points at Wed Nov  7 10:51:51 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})
+BWTest received 6 training points at Wed Nov  7 11:40:50 2018
+call chain: ({ /* sizeof() == 2 */
+  /secure/daemon/players,
+  /secure/save/players/b/bwtest
+})

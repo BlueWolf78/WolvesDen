@@ -1,0 +1,16 @@
+#/secure/daemon/imc2.c
+PersistentInventory 0
+PersistentInventoryEnabled 0
+tmpstr 0
+host "50.48.156.21"
+who_str "Wolves Den Dev*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=**=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*                   There are zero members of our reality.                  http://dead-souls.nettelnet://50.48.156.21:6000___________________________________________________________________________"
+mode 2
+autodisabled 0
+ping_requests ([])
+buf ""
+server_version 0
+localchaninfo ([])
+mudinfo ([])
+genders ([])
+tells ([])
+sequence 14

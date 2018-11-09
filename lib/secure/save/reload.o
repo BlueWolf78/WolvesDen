@@ -1,0 +1,5 @@
+#/secure/daemon/reload.c
+Reloadees (["/secure/cmds/admins/liveupgrade":1541611494,])
+savefile "/secure/save/reload.o"
+grooms ({})
+occupied_rooms ({})
