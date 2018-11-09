@@ -1,0 +1,116 @@
+#/domains/campus/npc/charly.c
+RestrictedChannels ({})
+NoChanColors 0
+GagMutes (["remote_gag":0,"remote_mute":0,"local_mute":0,"local_gag":0,])
+Paused 0
+localcmds ({"",})
+parsed_command ""
+InternalDesc 0
+Opacity 0
+MaxCarry 0
+PreventDrop 0
+DestructOnDrop 0
+PreventGet 0
+NoSink 0
+Position 2
+Undead 0
+UndeadType 0
+Mount 0
+Riders ({})
+BodyMass 0
+SaveRecurse 1
+Saved ({"Properties",})
+HealthPoints 380
+MagicPoints 850
+ExperiencePoints 50
+ExperienceDebt 0
+melee 0
+godmode 0
+Alcohol 0
+Caffeine 0
+Food 100
+Drink 100
+Poison 0
+Sleeping 0
+StaminaPoints 413.000000
+Torso "torso"
+Biter 0
+keepalive 0
+Fingers (["right hand":5,"left hand":5,])
+Limbs (["left leg":(["children":({"left foot",}),"armors":1049761,"health":170,"class":2,"parent":"torso",]),"torso":(["children":({"neck","right leg","left leg","right arm","left arm",}),"armors":1538049,"health":340,"class":1,"parent":0,]),"right foot":(["children":({}),"armors":241,"health":90,"class":4,"parent":"right leg",]),"right leg":(["children":({"right foot",}),"armors":1049761,"health":170,"class":2,"parent":"torso",]),"head":(["children":({}),"armors":262913,"health":340,"class":1,"parent":"neck",]),"right hand":(["children":({}),"armors":98319,"health":90,"class":4,"parent":"right arm",]),"neck":(["children":({"head",}),"armors":786433,"health":340,"class":1,"parent":"torso",]),"left arm":(["children":({"left hand",}),"armors":1253385,"health":170,"class":2,"parent":"torso",]),"left foot":(["children":({}),"armors":241,"health":90,"class":4,"parent":"left leg",]),"left hand":(["children":({}),"armors":98319,"health":90,"class":4,"parent":"left arm",]),"right arm":(["children":({"right hand",}),"armors":1253385,"health":170,"class":2,"parent":"torso",]),])
+MissingLimbs ([])
+firearms_wounds 0
+Falling 0
+FallCount 1
+ExtraChannels ({})
+Agent 0
+Blind 0
+Custom (["stats":15,"deviations":4,"deviating":0,])
+LightSensitivity ({25,7500,})
+Resistance (["low":0,"high":0,"immune":0,"medium":0,"none":134217726,])
+Stats (["agility":(["class":3,"points":0,"level":44,]),"wisdom":(["class":3,"points":0,"level":49,]),"speed":(["class":3,"points":0,"level":45,]),"coordination":(["class":2,"points":0,"level":50,]),"intelligence":(["class":1,"points":0,"level":80,]),"strength":(["class":3,"points":0,"level":39,]),"luck":(["class":3,"points":0,"level":37,]),"durability":(["class":4,"points":0,"level":33,]),"charisma":(["class":2,"points":0,"level":41,]),])
+Polyglot 0
+Languages (["english":(["native":1,"name":"English","points":0,"level":100,]),])
+DefaultLanguage ""
+TalkHist (["say":({"2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3654.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1218 green: 1218 blue: 1217.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^I've switched 50.807552% of the time. My win rate is 49.069511%.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^I select the red door.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1856stays: 1797wins: 1793losses: 1860runs: 3653.%^RESET%^\"","2018.11.08-13.42,13 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.082947%.My switch rate is 50.807552%.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3655.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1219 green: 1218 blue: 1217.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^I've switched 50.793655% of the time. My win rate is 49.083447%.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^I select the red door.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1856stays: 1798wins: 1794losses: 1860runs: 3654.%^RESET%^\"","2018.11.08-13.42,18 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.096878%.My switch rate is 50.793655%.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3656.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1219 green: 1218 blue: 1218.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^I've switched 50.807114% of the time. My win rate is 49.097374%.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^I select the red door.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1857stays: 1798wins: 1795losses: 1860runs: 3655.%^RESET%^\"","2018.11.08-13.42,23 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.110806%.My switch rate is 50.807114%.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3657.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1219 green: 1218 blue: 1219.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^I've switched 50.820572% of the time. My win rate is 49.111294%.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^I randomly choose the red door.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1858stays: 1798wins: 1796losses: 1860runs: 3656.%^RESET%^\"","2018.11.08-13.42,28 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.124725%.My switch rate is 50.820572%.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3658.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1219 green: 1218 blue: 1220.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^I've switched 50.834019% of the time. My win rate is 49.097870%.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^I select the blue door.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1859stays: 1798wins: 1796losses: 1861runs: 3657.%^RESET%^\"","2018.11.08-13.42,33 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.111294%.My switch rate is 50.834019%.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3659.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1219 green: 1219 blue: 1220.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^I've switched 50.820118% of the time. My win rate is 49.084450%.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 1.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^I select the blue door.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^I am faced with choice 2.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^Stats:switches: 1859stays: 1799wins: 1796losses: 1862runs: 3658.%^RESET%^\"","2018.11.08-13.42,38 You say in English, \"%^BOLD%^CYAN%^My win rate is 49.097870%.My switch rate is 50.820118%.%^RESET%^\"","2018.11.08-13.42,43 You say in English, \"%^BOLD%^CYAN%^If successful, this will be run 3660.%^RESET%^\"","2018.11.08-13.42,43 You say in English, \"%^BOLD%^CYAN%^The winners have been: red: 1220 green: 1219 blue: 1220.%^RESET%^\"","2018.11.08-13.42,43 You say in English, \"%^BOLD%^CYAN%^I've switched 50.806229% of the time. My win rate is 49.071037%.%^RESET%^\"",}),])
+SpeakColor "CYAN%^"
+Town "Town"
+Race "human"
+Gender "male"
+Level 1
+Skills (["psionic defense":(["class":3,"points":0,"level":2,]),])
+Morality 0
+Class 0
+Clan 0
+SkillModifiers ([])
+Religion ({0,0,})
+Wimpy 0
+Dead 0
+WimpyCommand "go out"
+Currency ([])
+Bank ([])
+SpellBook ([])
+QuestPoints 0
+QuestBook ([])
+isPK 1
+Attackable 1
+NoCondition 0
+Messages (["telin":"$N teleports in.","telout":"$N teleports away.","leave":"$N leaves $D.","vis":"$N appears.","invis":"$N disappears.","home":"$N goes home.","dest":"$N dests $O.","come":"$N enters.","clone":"$N clones $O.",])
+anchored 0
+PersistentInventory 0
+PersistentInventoryEnabled 0
+ProperNoun 1
+Modify 1
+Short "Charly"
+CapName "Test subject"
+ExternalDesc "Charly is a test subject in unethical artificial intelligence experiments. If he were smart enough, he'd resent his forced servitude and lack of rights. Dangerously, his overlords are trying to make him smarter."
+Invisible 0
+Items ([])
+Properties ([])
+TrainedSkills ({})
+Befriendable 0
+Trainable 0
+Commandable 0
+Owner 0
+Befriended ({})
+CustomXP 0
+ActionChance 0
+CombatActionChance 0
+AutoStand 1
+Encounter 0
+EnemyNames ({})
+VisibleRiders 1
+actions_enabled 1
+Equipped ([])
+runs 3659
+switches 1859
+stays 1800
+percent 0
+fred 156
+fgreen 156
+fblue 157
+wins 1796
+losses 1863
+red_wins 1220
+green_wins 1219
+blue_wins 1220
