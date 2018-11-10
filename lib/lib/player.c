@@ -4,6 +4,10 @@
  *    created by Descartes of Borg 950321
  *    Version: @(#) player.c 1.26@(#)
  *    Last Modified: 97/01/03
+ *
+ *    11/09/2018
+ *    Code for Skill Based Advancement added
+ *    Code by Lash@The Brass Ring
  */
 
 #include <lib.h>
@@ -315,7 +319,11 @@ int Setup(){
     string classes;
     string oldparties = PARTY_D->GetOldParties();
     if( !interactive::Setup() ) return 0;
-    if( !GetClass() ) SetClass("explorer");
+
+    // Replaced with Skill Based Advancement modification
+    // if( !GetClass() ) SetClass("explorer");
+    if( !GetClass() && CLASS_SELECTION ) SetClass("explorer");
+
     RemoveExtraChannels(oldparties);
     foreach(string oldparty in oldparties){
         RemoveChannel(oldparty);
@@ -348,6 +356,9 @@ int Setup(){
                 AddChannel(classes);
         if( avatarp() ) AddChannel(({ "avatar" }));
         AddChannel( ({ "gossip", "newbie" }) );
+	// Added from Skill Based Advancement code
+	if( GetClass() ) AddChannel(GetClass());
+	// End Add
         if( high_mortalp() ) AddChannel( ({ "hm" }) );
         else {
             //RemoveChannel( ({ "newbie" }) );

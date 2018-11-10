@@ -4,6 +4,10 @@
  *    created by Descartes of Borg 950122
  *    Version: @(#) genetics.c 1.4@(#)
  *    Last Modified: 96/11/11
+ *
+ *    11/09/2018
+ *    Added Skill Based Advancement Code
+ *    Code by Lash@The Brass Ring
  */
 
 #include <vision.h>
@@ -39,6 +43,34 @@ static void create(){
     Resistance = ([ "low" : 0, "medium" : 0, "high" : 0, "immune" : 0 ]);
     Resistance["none"] = ALL_DAMAGE;
 }
+
+/* Optional Code from Skill Based Advancement
+ * Code by Lash@The Brass Ring
+ * Remove from comment to activate awarding customization points per level
+ * ensure to activate code in /lib/lvs/level.c as well
+
+void AddCustomizationPoints(){
+     int x, y, z;
+     string *stats;
+     string str;
+
+     x = this_player()->GetCustomStats(); //don't blow away players custom stat points if not used
+       
+     stats = this_player()->GetStats();
+        foreach(str in stats){
+            x += this_player()->GetBaseStatLevel(str);
+            y++;
+        }
+        write("x is "+x+" y is "+y+"\n");
+        if(x <= ((y*100)-15)){ //stat points not greater than 100
+            z = random(15)+1;
+            write("z is "+z+"\n");
+        }else{ z = random(x)+1;
+        }
+     Custom = ([ "stats" : z, "deviations" : 0, "deviating" : 0, ]);
+}
+
+*/
 
 int GetBlind(){
     if( Blind ){

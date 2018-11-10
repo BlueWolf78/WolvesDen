@@ -16,6 +16,12 @@
 #define CFG_PRIVS		DIR_SECURE_CFG "/privs.cfg"
 #define CFG_RACES               DIR_SECURE_CFG "/races"
 #define CFG_READ		DIR_SECURE_CFG "/read.cfg"
+/* 11/09/2018
+ * Added for Skill Based Leveling
+ * Code by Lash@The Brass Ring
+ */
+#define CFG_SKILLS		DIR_SECURE_CFG "/skills.cfg"
+// End Add
 #define CFG_TIME                DIR_CFG "/time.cfg"
 #define CFG_TIMEZONES           DIR_CFG "/timezones.cfg"
 #define CFG_TIMEZONE            DIR_CFG "/timezone.cfg"

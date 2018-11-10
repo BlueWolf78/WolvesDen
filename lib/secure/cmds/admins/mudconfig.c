@@ -20,12 +20,19 @@ string array nonmodals = ({ "liveupgrade", "prompt","status","email",
         "debugger", "access", "pinging", "pinginterval",
         "imc2serverpass", "imc2clientpass" });
 string array antimodals = ({ "imc2", "ced" });
-string array modals = antimodals + ({ "channelpipes", "fastcombat", 
+
+/* 11/09/2018
+ * Added: selectskills, xpadvancement, skilladvancement
+ * For Skill Based Levling
+ * Code by Lash@The Brass Ring
+ */
+string array modals = antimodals + ({ "channelpipes", "fastcombat",
         "catchtell","matchcommand", "matchobject", "autowiz", "locked",
-        "localtime", "justenglish", "justhumans", "encumbrance", "pk", 
+        "localtime", "justenglish", "justhumans", "encumbrance", "pk",
         "compat", "exitsbare", "nmexits", "grid", "minimap", "wizmap",
-        "cgi", "dirlist", "creweb", "selectclass", "severable",
-        "retain", "defaultparse", "disablereboot", "loglocal", "logremote",
+        "cgi", "dirlist", "creweb", "selectclass", "selectskills",
+	"xpadvancement", "skilladvancement", "severable", "retain",
+	"defaultparse", "disablereboot", "loglocal", "logremote",
         "questrequired", "autoadvance","guestallowed", "playerintertell" });
 string array inet_services = ({ "oob", "hftp", "ftp", "http", "rcp", "inet" });
 
@@ -564,6 +571,16 @@ static int ProcessModal(string which, string arg){
         case "matchobject" : which = "OBJECT_MATCHING";break;
         case "catchtell" : which = "NPC_CATCH_TELL_DEBUG";break;
         case "loglocal" : which = "LOG_LOCAL_CHANS";break;
+/* 11/09/2018
+ * Added: selectclass, selectskills, xpadvancement, skilladvancement
+ * For Skill Based Leveling
+ * Code by Lash@The Brass Ring
+ */
+	case "selectclass" : which = "CLASS_SELECTION";break;
+	case "selectskills" : which = "SKILL_SELECTION";break;
+	case "xpadvancement" : which = "XP_ADVANCE";break;
+	case "skilladvancement" : which = "SKILL_ADVANCE";break;
+// End Add
         case "logremote" : which = "LOG_REMOTE_CHANS";break;
         case "imc2" : which = "DISABLE_IMC2";break;
         case "fastcombat" : which = "FAST_COMBAT";break;

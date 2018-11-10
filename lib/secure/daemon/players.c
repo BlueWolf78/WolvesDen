@@ -303,6 +303,9 @@ static int AutoAdvance(object ob, int level){
     return ret;
 }
 
+/* Original CheckAdvance
+ * Replaced with version from Skill Based Advancement
+ * Code by Lash@The Brass Ring
 int CheckAdvance(object ob){
     int dlev, xp, qp;
     if(!ob || !playerp(ob)) return 0;
@@ -317,6 +320,69 @@ int CheckAdvance(object ob){
     }
     return 0;
 }
+ *
+ */
+
+int CheckAdvance(object ob){
+    string str;
+    string *ptmp = ({});
+    string *stmp = ({});
+    string *mtmp = ({});
+    int dlev, x ,y ,z, xp, qp;
+    int *plevels = ({});
+    int *slevels = ({});
+    int *mlevels = ({});
+    int *psorted, *ssorted, *msorted;
+   
+    dlev = (ob->GetLevel())+1;
+    /* get and sort primary skills and levels */
+    if(SKILL_ADVANCE){
+        ptmp = this_player()->GetPrimarySkills();
+        foreach(str in ptmp){
+            plevels += ({this_player()->GetSkillLevel(str)});
+        }
+        plevels = sort_array(plevels,-1);
+        x = this_player()->GetMaxSkillLevel(ptmp[0]);
+       
+        /* get and sort secondary skills and levels */
+        stmp = this_player()->GetSecondarySkills();
+        foreach(str in stmp){
+            slevels += ({this_player()->GetSkillLevel(str)});
+        }   
+        slevels = sort_array(slevels,-1);
+        y = this_player()->GetMaxSkillLevel(stmp[0]);
+       
+        /* get and sort minor skills and levels */
+        mtmp = this_player()->GetMinorSkills();
+        foreach(str in mtmp){
+            mlevels += ({this_player()->GetSkillLevel(str)});
+        }
+        mlevels = sort_array(mlevels,-1);
+        z = this_player()->GetMaxSkillLevel(mtmp[0]);
+       
+        if(plevels[0] >= x && plevels[1] >= x && plevels[2] >=x
+           && slevels[0] >=y && slevels[1] >= y
+           && mlevels[0] >= z){
+            if(AUTO_ADVANCE) AutoAdvance(ob, dlev);
+            return 1;
+        }
+    return 0;
+    }
+    if(XP_ADVANCE){
+        if(!ob || !playerp(ob)) return 0;
+        if(!sizeof(Levels)) CompileLevelList();
+        if(!Levels[dlev]) return 0;
+        xp = ob->GetExperiencePoints();
+        qp = ob->GetQuestPoints();
+        if(xp >= Levels[dlev]["xp"] && qp >= Levels[dlev]["qp"]){
+            if(AUTO_ADVANCE) AutoAdvance(ob, dlev);
+            return 1;
+        }
+    }
+    return 0;
+}
+
+// End Add
 
 void AddPlayerInfo(mixed arg){
     if(!objectp(arg) && !stringp(arg)){

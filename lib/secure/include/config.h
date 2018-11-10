@@ -31,7 +31,7 @@
 #define LOCKED_ACCESS_ALLOWED    ({ "SECURE", "ASSIST", "ELDER", "TEST" })
 #define SUPPORTED_CLIENTS       ({ "amcp", "amcp/1.1" })
 #define HOUR_LENGTH              1200
-#define DAY_LENGTH               20
+#define DAY_LENGTH               24
 #define MAX_NEWBIE_LEVEL         0
 #define AUTOSAVE_TIME            200
 #define MORTAL_POSITIONS         ({ "player", "high mortal", "ambassador" })
@@ -41,7 +41,14 @@
 #define ENGLISH_ONLY             0
 #define HUMANS_ONLY              0
 #define SEVERABLE_LIMBS          1
+/* Addition of the Skill Based Leveling Code from Lash@TheBrassRing
+ * CLASS_SELECTION and SKILL_SELECTION should not both be set to 1
+ */
 #define CLASS_SELECTION          0
+#define SKILL_SELECTION		 1
+#define XP_ADVANCE		 0
+#define SKILL_ADVANCE		 1
+// End Add
 #define PINGING_MUDS             ({})
 #define PING_INTERVAL            290
 #define ENABLE_ENCUMBRANCE       0
@@ -82,7 +89,7 @@
 #define F_TERMINAL_COLOR         1
 #define MAX_CALL_OUTS            750
 #define REQUIRE_QUESTING         1
-#define AUTO_ADVANCE             1
+#define AUTO_ADVANCE             0
 #define MAX_INVENTORY_SIZE       2048
 #define MAX_ATTACKS_PER_HB       40
 #define MEMUSE_SOFT_LIMIT        0
@@ -96,6 +103,4 @@
 #define CED_DISABLED             1
 #define GUEST_ALLOWED            1
 #define PLAYER_INTERTELL_ALLOWED 0
-
 #endif /* s_config_h */
-

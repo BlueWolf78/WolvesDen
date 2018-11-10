@@ -4,11 +4,24 @@
  *    Created by Descartes of Borg 950122
  *    Version: @(#) abilities.c 1.22@(#)
  *    Last modified: 97/01/03
+ *
+ *    11/09/2018
+ *    Added Code for Skill Based Leveling
+ *    Code by Lash@The Brass Ring
  */
 
 #include <daemons.h>
 
 inherit LIB_LEVEL;
+
+/* Function Prototypes for Skill Based Leveling
+ * Code by Lash@The Brass Ring
+ */
+
+private string array GetPrimarySkills();
+private string array GetSecondarySkills();
+private string array GetMinorSkills();
+// End Add
 
 private int            Level       = 1;
 private mapping        Skills      = ([]);
@@ -121,6 +134,21 @@ int GetMaxSkillPoints(string skill, int level){
 string array GetPrimarySkills(){ 
     return filter(keys(Skills), (: Skills[$1]["class"] == 1 :));
 }
+
+/* 11/09/2018
+ * Code block for Skill Based advancement
+ * Code by Lash@The Brass ring
+ */
+
+string array GetSecondarySkills(){
+    return filter(keys(Skills), (: Skills[$1]["class"] == 2 :));
+}
+
+string array GetMinorSkills(){
+    return filter(keys(Skills), (: Skills[$1]["class"] == 3 :));
+}
+
+// End Add
 
 /* varargs int AddSkill(string skill, int classes)
  * string skill - the skill being added (required)

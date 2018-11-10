@@ -43,6 +43,45 @@ varargs int ChangeLevel(int i){
     skills = subject->GetSkillsMap();
     stats = subject->GetStatsMap();
 
+/* Optional Code from Skill Based Advancement - Adds Customization Points Per Level
+ * Code by Lash@The Brass Ring
+ * Remove code from comments to activate
+ * Be sure to activate code in /lib/genetics.c as well
+
+if(XP_ADVANCE){
+        foreach(mixed key, mixed val in skills){
+            if(skills[key]["class"] > 3) skills[key]["class"] = 4;
+            subject->SetSkill(key,
+                    skills[key]["level"] + moduli[skills[key]["class"]],
+                    skills[key]["class"]);
+        }
+
+        foreach(mixed key, mixed val in stats){
+            if(stats[key]["class"] > 3) stats[key]["class"] = 4;
+            subject->SetStat(key,
+                    stats[key]["level"] + moduli[stats[key]["class"]],
+                    stats[key]["class"]);
+        }
+
+        subject->SetLevel(desired_level);
+
+        if(interactive() && find_object(INSTANCES_D)){
+            INSTANCES_D->SendWhoUpdate(this_object()->GetKeyName());
+        }
+    }
+
+if(SKILL_ADVANCE){
+        subject->AddCustomizationPoints();
+        subject->SetLevel(desired_level);
+
+        if(interactive() && find_object(INSTANCES_D)){
+            INSTANCES_D->SendWhoUpdate(this_object()->GetKeyName());
+        }
+    } 
+
+*/
+
+
     foreach(mixed key, mixed val in skills){
         if(skills[key]["class"] > 3) skills[key]["class"] = 4;
         subject->SetSkill(key, 
