@@ -1,15 +1,29 @@
 fighter
 PLAYER_CLASS 1
+# Primary
 blade attack:1:4
-multi-hand:1:4
-multi-weapon:1:4
-blade defense:1:4
-melee attack:1:4
 blunt attack:1:4
-knife attack:1:4
-projectile attack:1:1
+melee attack:1:4
 melee defense:1:4
-blunt defense:1:4
-knife defense:1:4
-projectile defense:1:1
-bargaining:4:4
+# Secondary
+multi-hand:2:2
+blade defense:2:2
+blunt defense:2:2
+knife defense:2:2
+# Minor
+multi-weapon:3:0
+projectile attack:3:0
+projectile defense:3:0
+bargaining:4:0
+concealment:4:0
+conjuring:4:0
+detection:4:0
+faith:4:0
+fishing:4:0
+healing:4:0
+psionic attack:4:0
+psionic defense:4:0
+psionic detection:4:0
+stealing:4:0
+stealth:4:0
+murder:4:0
