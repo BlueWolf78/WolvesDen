@@ -8,6 +8,8 @@
  *    11/09/2018
  *    Added Code for Skill Based Leveling
  *    Code by Lash@The Brass Ring
+ *    
+ *    Added Modification from 03/15/2016
  */
 
 #include <daemons.h>
@@ -109,13 +111,22 @@ int GetMaxSkillPoints(string skill, int level){
         return 0;
     }
     else if( level == 0 ){
-        return 200;
+// Modification addition
+// original was just return 200;
+	if(SKILL_ADVANCE){
+	    return 50;
+	}
+	else{
+	    return 200;
+        }
     }
     else {
         int cl, x;
 
         if( !(cl = Skills[skill]["class"]) ){
-            return level * 600;
+// Modification addition original was just return level * 600;
+	    if(SKILL_ADVANCE) return level * 200;
+	    else return level * 600;
         }
         if( cl > 4 ){
             cl = 4;
@@ -124,10 +135,17 @@ int GetMaxSkillPoints(string skill, int level){
             cl = 4;
         }
         x = level;
-        while( cl-- ){
+// Modification addition
+	if(SKILL_ADVANCE){
+	    return level * cl * 500;
+	}
+	else{
+// Original code block was just the while...
+            while( cl-- ){
             x *= level;
-        }
+            }
         return (x * 400);
+	}
     }
 }
 

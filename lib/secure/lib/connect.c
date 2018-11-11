@@ -133,7 +133,7 @@ static void create(int binary) {
 // Skill Based Advancement Addition
     Skills = filter(explode(read_file(CFG_SKILLS), "\n"),
 	     (: $1 && $1 != "" && $1[0] != '#' :));
-
+// End Addition
     if(ENABLE_INSTANCES){
         instname = INSTANCES_D->GetMyInstanceName();
     }
@@ -1251,8 +1251,13 @@ void eventCompleteChar(){
 /* 11/09/2018
  * Code Block for Skill Based Advancement
  * Code by Lash@The Brass Ring
+ *
+ * Modification from 03/15/2016 Applied
  */
-    if(ptmp){
+
+    if(trabajo && !ptmp) Player->ChangeClass(trabajo);
+//    if(ptmp){
+    if(ptmp && !trabajo){
         string str;
         receive("\nCharacter Summary\n");
         receive("-------------------------\n");
@@ -1263,7 +1268,9 @@ void eventCompleteChar(){
         }
         receive("\n");
     }
-    if(stmp){
+
+//    if(stmp){
+    if(stmp && !trabajo){
         string str;
         receive("\nSECONDARY Skills picked:\n");
         foreach(str in stmp){
@@ -1272,7 +1279,8 @@ void eventCompleteChar(){
         }
         receive("\n");
     }
-    if(mtmp){
+//    if(mtmp){
+    if(mtmp && !trabajo){
         string str;
         receive("\nMINOR Skills picked:\n");
         foreach(str in mtmp){
@@ -1285,12 +1293,20 @@ void eventCompleteChar(){
 
     this_player()->SetTerminal("ansi");
     PLAYERS_D->AddPlayerInfo(Name);
-    call_out( (: eventCre, Name :), 3);
+// Modified Add
+    if(yescre){
+	receive("\nAs a creator you will be booted out and have to\n"
+	        "log back in in order to complete the creator process\n");
+	call_out( (: eventCre, Name :), 3);
+	input_to((: eventEnterGame :), I_NOESC);
+    }
+// End Modified
+
 // Second Add
     receive("\nIf you wish to create a different character,\n"
 	    "use the 'suicide' command after logging in and\n"
 	    "start over.  Have FUN!\n"
-	    "Press <return> within 60 seconds to continue.");
+	    "Press <return> to continue.");
     input_to((: eventEnterGame :), I_NOESC);
 // Original replaced with above0
     //eventEnterGame();

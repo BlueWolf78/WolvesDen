@@ -44,8 +44,8 @@
 /* Addition of the Skill Based Leveling Code from Lash@TheBrassRing
  * CLASS_SELECTION and SKILL_SELECTION should not both be set to 1
  */
-#define CLASS_SELECTION          0
-#define SKILL_SELECTION		 1
+#define CLASS_SELECTION          1
+#define SKILL_SELECTION		 0
 #define XP_ADVANCE		 0
 #define SKILL_ADVANCE		 1
 // End Add
@@ -89,7 +89,7 @@
 #define F_TERMINAL_COLOR         1
 #define MAX_CALL_OUTS            750
 #define REQUIRE_QUESTING         1
-#define AUTO_ADVANCE             0
+#define AUTO_ADVANCE             1
 #define MAX_INVENTORY_SIZE       2048
 #define MAX_ATTACKS_PER_HB       40
 #define MEMUSE_SOFT_LIMIT        0
