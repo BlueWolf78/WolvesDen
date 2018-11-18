@@ -47,7 +47,7 @@ varargs int ChangeLevel(int i){
  * Code by Lash@The Brass Ring
  * Remove code from comments to activate
  * Be sure to activate code in /lib/genetics.c as well
-
+ */
 if(XP_ADVANCE){
         foreach(mixed key, mixed val in skills){
             if(skills[key]["class"] > 3) skills[key]["class"] = 4;
@@ -79,9 +79,8 @@ if(SKILL_ADVANCE){
         }
     } 
 
-*/
 
-
+/*
     foreach(mixed key, mixed val in skills){
         if(skills[key]["class"] > 3) skills[key]["class"] = 4;
         subject->SetSkill(key, 
@@ -101,7 +100,7 @@ if(SKILL_ADVANCE){
     if(interactive() && find_object(INSTANCES_D)){
         INSTANCES_D->SendWhoUpdate(this_object()->GetKeyName());
     }
-
+*/
     return 1;
 }
 

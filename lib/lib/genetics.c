@@ -48,7 +48,7 @@ static void create(){
  * Code by Lash@The Brass Ring
  * Remove from comment to activate awarding customization points per level
  * ensure to activate code in /lib/lvs/level.c as well
-
+ */
 void AddCustomizationPoints(){
      int x, y, z;
      string *stats;
@@ -70,7 +70,7 @@ void AddCustomizationPoints(){
      Custom = ([ "stats" : z, "deviations" : 0, "deviating" : 0, ]);
 }
 
-*/
+
 
 int GetBlind(){
     if( Blind ){

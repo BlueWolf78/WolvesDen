@@ -19,8 +19,8 @@
 #include <position.h>
 #include "include/player.h"
 
-#undef LIB_PLAYER_SKILL_LOSS
-#define PERCENT_XP 0.02
+#define LIB_PLAYER_SKILL_LOSS
+#define PERCENT_XP 0.00
 #define PERCENT_SP 0.70
 #define PERCENT_MP 0.95
 #define PERCENT_HP 0.70
@@ -142,7 +142,7 @@ varargs mixed eventDisplayStatus(int simple){
         str += "  %^GREEN%^sp: %^RED%^" + sp + "%^RESET%^/" + max_sp;
     else str += "  %^GREEN%^sp: %^RESET%^" + sp + "/" + max_sp;
     if(!simple){
-        str += "  %^MAGENTA%^xp: %^RESET%^" + xp;
+//        str += "  %^MAGENTA%^xp: %^RESET%^" + xp;
         str += "  %^CYAN%^qp: %^RESET%^" + qp;
     }
     if(!simple){

@@ -163,7 +163,7 @@ string array GetSecondarySkills(){
 }
 
 string array GetMinorSkills(){
-    return filter(keys(Skills), (: Skills[$1]["class"] == 3 :));
+    return filter(keys(Skills), (: Skills[$1]["class"] >= 3 :));
 }
 
 // End Add
