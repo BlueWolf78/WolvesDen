@@ -1,5 +1,5 @@
 explorer
-PLAYER_CLASS 1
+PLAYER_CLASS 0
 blade attack:2:1
 blade defense:2:1
 melee attack:2:1

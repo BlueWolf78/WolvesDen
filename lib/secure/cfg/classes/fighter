@@ -3,14 +3,15 @@ PLAYER_CLASS 1
 # Primary
 blade attack:1:4
 blunt attack:1:4
-melee attack:1:4
+knife attack:1:4
 melee defense:1:4
 # Secondary
-multi-hand:2:2
+melee attack:2:2
 blade defense:2:2
 blunt defense:2:2
 knife defense:2:2
 # Minor
+multi-hand:3:0
 multi-weapon:3:0
 projectile attack:3:0
 projectile defense:3:0

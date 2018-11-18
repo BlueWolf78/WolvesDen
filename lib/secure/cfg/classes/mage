@@ -10,15 +10,15 @@ blunt attack:2:1
 psionic defense:2:0
 melee defense:2:0
 # Minor
-bargaining:4:0
+bargaining:3:0
+knife defense:3:0
+detection:3:0
+concealment:3:0
 blade attack:4:0
 blade defense:4:0
 blunt defense:4:0
-concealment:4:0
-detection:4:0
 faith:4:0
 healing:4:0
-knife defense:4:0
 melee attack:4:0
 multi-hand:4:0
 multi-weapon:4:0
