@@ -71,17 +71,26 @@ mixed cmd(string args) {
                     "    " +
                     "Quest Points: "+ ob->GetQuestPoints(),cols)
                 });
-        lines += ({ center("Experience Points: " + ob->GetExperiencePoints() +
+	if(XP_ADVANCE){
+           lines += ({ center("Experience Points: " + ob->GetExperiencePoints() +
                     "    " +
                     "Experience Debt: "+ dbt,cols)
                 });
+	}
     } else {
-        lines += ({ center("Training Points: " + ob->GetTrainingPoints() +
+	if(XP_ADVANCE){
+           lines += ({ center("Training Points: " + ob->GetTrainingPoints() +
                     "    " +
                     "Quest Points: "+ ob->GetQuestPoints() +
                     "    " +
                     "Experience Points: "+ ob->GetExperiencePoints(),cols) 
                 });
+	} else {
+	   lines += ({ center("Training Points: " + ob->GetTrainingPoints() +
+			"    " +
+			"Quest Points: " + ob->GetQuestPoints(), cols)
+		});
+	}
     }
     lines += ({ "", "Limbs:" });
     limbs = ob->GetWieldingLimbs();

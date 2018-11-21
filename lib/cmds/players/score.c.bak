@@ -31,7 +31,7 @@ static string *DrunkDegree =
 
 static string *DrinkDegree =
 ({ "parched", "extremely thirsty", "very thirsty", "thirsty",
- "somewhat thirsty", "not thirsty" });
+ "somewhat thirsty", "unthirsty" });
 
 mixed cmd(string arg) {
     eventScore(arg);
@@ -119,11 +119,10 @@ varargs mixed eventScore(string arg) {
     xp = who->GetExperiencePoints();
     dbt = who->GetExperienceDebt();
     lev = PLAYERS_D->GetLevelList()[(who->GetLevel()) + 1];
-    if(XP_ADVANCE){
-       if(dbt){
-           str += ({ capitalize(prn)+" have "+dbt+" points of "+
+
+    if(dbt){
+        str += ({ capitalize(prn)+" have "+dbt+" points of "+
                 "experience debt." });
-       }
     }
 
     if(lev){
@@ -132,14 +131,13 @@ varargs mixed eventScore(string arg) {
             if(qp > 0) tmp += ({capitalize(prn)+" require"+cnj+" "+
                     comma(qp)+" more quest points to advance."});
         }
-	if(XP_ADVANCE){
-           xp = lev["xp"] - xp;
-           if(xp > 0) tmp += ({capitalize(prn)+" require"+cnj+" "+
-                   comma(xp)+" more experience points to advance."});
-           if(!sizeof(tmp)) tmp = ({capitalize(prn)+" "+qual+
-                   " to advance a level."});
-           str += tmp;
-	} 
+
+        xp = lev["xp"] - xp;
+        if(xp > 0) tmp += ({capitalize(prn)+" require"+cnj+" "+
+                comma(xp)+" more experience points to advance."});
+        if(!sizeof(tmp)) tmp = ({capitalize(prn)+" "+qual+
+                " to advance a level."});
+        str += tmp; 
     }
 
     if(x){
