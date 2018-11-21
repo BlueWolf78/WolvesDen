@@ -4,15 +4,19 @@ PLAYER_CLASS 1
 blunt attack:1:4
 faith:1:4
 healing:1:4
+melee defense:1:4
 # Secondary
 blunt defense:2:2
 magic defense:2:2
+blade defense:2:2
+knife defense:2:2
 # Minor
+fishing:3:1
+blade attack:3:1
+knife attack:3:1
+conjuring:3:1
 bargaining:4:0
-blade attack:4:0
-blade defense:4:0
 concealment:4:0
-conjuring:4:0
 detection:4:0
 knife attack:4:0
 knife defense:4:0
