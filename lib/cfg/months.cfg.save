@@ -1,0 +1,21 @@
+# /cfg/months.cfg
+# from the Dead Souls LPC Library
+# a listing of months
+#
+# 11/09/2018
+# Modified to name months in an irish theme
+#
+# format:
+# month:season:days:day_length
+
+Mi Eanair:winter:20:9
+Mi Feabhra:winter:20:10
+Mi Marta:spring:20:10
+Mi Aibrean:spring:20:10
+Mi Bealtaine:summer:20:11
+Mi Meitheamh:summer:20:12
+Mi Iuil:summer:20:11
+Mi Lunasa:summer:20
+:autumn:20:10
+Sartki:autumn:20:10
+Denki:winter:20:10
