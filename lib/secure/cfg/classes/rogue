@@ -1,0 +1,32 @@
+rogue
+PLAYER_CLASS 1
+# Primary
+knife attack:1:4
+knife defense:1:4
+stealing:1:4
+stealth:1:4
+# Secondary
+bargaining:2:2
+murder:2:1
+detection:2:2
+concealment:2:2
+# Minor
+blade attack:3:1
+blade defense:3:1
+blunt attack:3:1
+blunt defense:3:1
+conjuring:4:0
+faith:4:0
+fishing:4:0
+healing:4:0
+magic attack:4:0
+magic defense:4:0
+melee attack:4:0
+melee defense:4:0
+multi-hand:4:0
+multi-weapon:4:0
+projectile attack:4:0
+projectile defense:4:0
+psionic attack:4:0
+psionic defense:4:0
+psionic detection:4:0
