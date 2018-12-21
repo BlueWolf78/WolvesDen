@@ -57,6 +57,8 @@ static void NewbieNews() {
     ClassNews("");
 }
 
+
+// Is this logic correct?
 void ClassNews(string cl) {
     object player = ThisPlayer();
     if( !cl || cl == "" ) cl = "cleric";
@@ -73,7 +75,7 @@ void ClassNews(string cl) {
             case "fisher":
                 cl = "kataan";
                 break;
-
+// Remove This
             case "kataan":
                 cl = "mage";
                 break;
