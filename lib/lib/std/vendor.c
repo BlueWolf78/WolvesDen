@@ -337,6 +337,8 @@ int cmdAppraise(object who, string args){
     eventForce("say " + capitalize(who->GetKeyName()) + ", I will offer "
             "you " + x + " " + GetLocalCurrency() + " for " +
             ob->GetShort());
+    // Add skill points for appraisal
+    who->AddSkillPoints("bargaining", cost*5);
     return 1;
 }
 
@@ -391,6 +393,8 @@ int cmdPrice(object who, string args){
     eventForce("say " + capitalize(who->GetKeyName()) + ", I will take " +
             x + " " + GetLocalCurrency() + " for " +
             ob->GetShort());
+    // Add skill points for pricing
+    who->AddSkillPoints("bargaining", x*5);
     return 1;
 }
 
