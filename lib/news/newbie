@@ -1,0 +1,10 @@
+
+%^YELLOW%^*%^RESET%^ As a new character you should receive a Player Handbook.  It is not
+    long and has a lot of good information in it.  Players unfamiliar
+    with our library are encouraged to read it as well.
+
+  To begin reading the handbook type:  %^GREEN%^read chapter 1 in handbook%^RESET%^
+
+%^YELLOW%^*%^RESET%^ To enable colored text type: %^GREEN%^terminal ansi%^RESET%^
+
+*~*~*~*~
