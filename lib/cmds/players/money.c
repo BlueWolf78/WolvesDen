@@ -17,21 +17,23 @@ mixed cmd(string str) {
     currs = this_player()->GetCurrencies();
     currs = filter(currs, (: this_player()->GetCurrency($1) > 0 :));
     if( !currs || !sizeof(currs) ) {
-        write("You are broke.");
+        write("%^YELLOW%^You are broke.%^RESET%^");
         say(this_player()->GetName()+" comes up with empty pockets.");
         return 1;
     }
     say(this_player()->GetName()+" fishes through "+
             possessive(this_player())+" pockets examining some money.");
-    message("my_action", "In your pockets you find "+
+    message("my_action", "%^YELLOW%^In your pockets you find "+
             ((sizeof(currs) > 1) ? "these currencies: " : "only: "), this_player());
     for(borg = "", i=0, tmp = sizeof(currs); i<tmp; i++) {
+	borg +="%^GREEN%^";
         borg += ((this_player()->GetCurrency(currs[i]))+" "+currs[i]);
-        if(i == tmp-1) borg +=(".\n");
+        if(i == tmp-1) borg +=(".%^RESET%^\n");
         else if(tmp > 2 && i == tmp-2) borg += (", and ");
         else if(tmp == 2) borg +=(" and ");
         else borg +=(", ");
     }
+    borg += "%^RESET%^";
     message("my_action", borg, this_player());
     return 1;
 }

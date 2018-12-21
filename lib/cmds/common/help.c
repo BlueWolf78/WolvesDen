@@ -49,7 +49,7 @@ mixed cmd(string arg) {
             return HELP_D->GetLastError();
         }
     }
-    help = center(mud_name()+" System Help", screen[0]) + tmp;
+    help = center("%^BOLD%^%^CYAN%^" + mud_name()+" System Help%^RESET%^", screen[0]) + tmp;
     if(sizeof(help) < 2000)    help = wrap(help, screen[0]);
     who->eventPage(explode(help, "\n"), MSG_HELP);
     return 1;
@@ -67,7 +67,7 @@ varargs void HelpMenu(string index) {
     int y = 0;
 
     scr = this_player()->GetScreen() || ({ 80, 25 });
-    tmp = center(mud_name()+" System Help", scr[0]);
+    tmp = center("%^BOLD%^%^CYAN%^"+mud_name()+" System Help%^RESET%^", scr[0]);
     if( !index ) {
         tmp += "Index: %^GREEN%^main index%^RESET%^\n\n";
         indices = filter(HELP_D->GetIndices(),
@@ -85,8 +85,8 @@ varargs void HelpMenu(string index) {
                     }, indices), scr[0]/(y+2), 4);
     }
     else if( !HELP_D->CanAccess(this_player(), index) ) {
-        message("help", "Invalid index choice.", this_player());
-        message("prompt", "Hit <return>: ", this_player());
+        message("help", "%^BOLD%^%^RED%^Invalid index choice.%^RESET%^", this_player());
+        message("prompt", "%^YELLOW%^Hit <return>: %^RESET%^", this_player());
         input_to(function(string str) { HelpMenu(0); });
         return;
     }
@@ -108,18 +108,18 @@ varargs void HelpMenu(string index) {
     }
     f = function(string ind) {
         if( !ind )
-            message("prompt", "\n\nEnter a index or 'q' to quit help: ",
+            message("prompt", "\n\n%^YELLOW%^Enter a index or 'q' to quit help:%^RESET%^ ",
                     this_player());
         else
-            message("prompt", "\n\nEnter a topic, 'q' to quit help, or "
-                    "<return> for main menu: ", this_player());
+            message("prompt", "\n\n%^YELLOW%^Enter a topic, 'q' to quit help, or "
+                    "<return> for main menu: %^RESET%^", this_player());
         input_to(function(string str, string ind) {
                 string ret;
                 int ind_num;
                 int *scr;
 
                 if( str == "q" ) {
-                message("system", "Exiting help.", this_player());
+                message("system", "%^YELLOW%^Exiting help.%^RESET%^", this_player());
                 return;
                 }
                 if( !str || str == "" ) {
@@ -134,13 +134,13 @@ varargs void HelpMenu(string index) {
                 else tmp2 = HELP_D->GetTopics(ind);    
                 if( ind_num < 1 || ind_num > sizeof(tmp2) ) {
                 str = 0;
-                HELP_D->SetError("Index number out of range.");
+                HELP_D->SetError("%^BOLD%^%^RED%^Index number out of range.%^RESET%^");
                 }
                 else str = tmp2[ind_num - 1];
                 }
                 if( !ind && !HELP_D->GetTopics(str) ) {
-                    message("help", "Invalid index choice.", this_player());
-                    message("prompt", "Hit <return>: ", this_player());
+                    message("help", "%^BOLD%^%^RED%^Invalid index choice.%^RESET%^", this_player());
+                    message("prompt", "%^YELLOW%^Hit <return>: %^RESET%^", this_player());
                     input_to(function(string str) { HelpMenu(); });
                     return;
                 }
@@ -150,14 +150,14 @@ varargs void HelpMenu(string index) {
                 }
                 if( !(ret = HELP_D->GetHelpByIndex(ind, str)) ) {
                     message("help", HELP_D->GetLastError(), this_player());
-                    message("prompt", "\nHit <return>: ", this_player());
+                    message("prompt", "\n%^YELLOW%^Hit <return>: %^RESET%^", this_player());
                     input_to(function(string str) { HelpMenu(); });
                     return;
                 }
-                ret = center(mud_name()+" System Help", scr[0])+wrap(ret, scr[0]);
+                ret = center("%^BOLD%^%^CYAN%^"+mud_name()+" System Help%^RESET%^", scr[0])+wrap(ret, scr[0]);
                 this_player()->eventPage(explode(ret, "\n"), "help",
                         function(string ind) {
-                        message("prompt", "\n\nHit <return>: ",
+                        message("prompt", "\n\n%^YELLOW%^Hit <return>: %^RESET%^",
                             this_player());
                         input_to(function(string str, string ind) {
                             HelpMenu(ind); }, ind);

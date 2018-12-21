@@ -10,7 +10,7 @@ inherit LIB_DAEMON;
 mapping instinfo;
 mixed instances;
 
-#define SEP repeat_string("*=",39)+"*\n";
+#define SEP repeat_string("%^BOLD%^%^BLUE%^*%^BOLD%^%^MAGENTA%^=",39)+"%^BOLD%^%^BLUE%^*%^RESET%^\n";
 
 static int LevelSort(mixed one, mixed two){
     int i1, i2, alpha;
@@ -68,8 +68,8 @@ int cmd(string args) {
             sscanf(last_string_element(base_name(obs[i]), "/"),"%s.%*s", fnm);
             if(fnm && fnm != obs[i]->GetKeyName()) continue;
             if(!obs[i]->GetInvis()){
-                if(archp(obs[i])) tmp+="[%^BLUE%^ARCH%^RESET%^]";
-                else if(creatorp(obs[i]) ) tmp+="[%^CYAN%^WIZ%^RESET%^]";
+                if(archp(obs[i])) tmp+="[%^BOLD%^%^BLUE%^ARCH%^RESET%^]";
+                else if(creatorp(obs[i]) ) tmp+="[%^BOLD%^%^CYAN%^CREATOR%^RESET%^]";
                 else if(avatarp(obs[i]) ) tmp+="[%^GREEN%^AVATAR%^RESET%^]";
                 else if(high_mortalp(obs[i]) ){
                     tmp+="[%^GREEN%^HIGH MORTAL%^RESET%^]";
@@ -77,10 +77,10 @@ int cmd(string args) {
                 else tmp+=sprintf("[%d]", obs[i]->GetLevel() );
                 if(elderp(obs[i])) tmp+="[%^YELLOW%^ELDER%^RESET%^]";
                 if(testp(obs[i]) && !archp(obs[i])){
-                    tmp+="[%^B_CYAN%^%^BLACK%^TEST%^RESET%^]";
+                    tmp+="[%^CYAN%^TEST%^RESET%^]";
                 }
                 if(ambassadorp(obs[i])) tmp+="[%^YELLOW%^AMBASSADOR%^RESET%^]";
-                tmp += ": ";
+                tmp += ": \t";
                 if(sizeof(strip_colours(obs[i]->GetShort())) < 50) {
                     tmp+=sprintf(" %s", obs[i]->GetShort());
                 }
@@ -107,7 +107,7 @@ int cmd(string args) {
                 p++;
             }
         }
-        ret+=center(mud_name());
+        ret+="%^BOLD%^%^CYAN%^"+center(mud_name())+"%^RESET%^";
         ret+="\n";
         ret+=SEP;
         ret+=tmp;
@@ -163,11 +163,11 @@ int cmd(string args) {
             tmp = "";
         }    
         ret+=SEP;
-        x="There ";
+        x="%^BOLD%^%^GREEN%^There ";
         (p==1) ? x+="is " : x+="are ";
         x+=cardinal(p);
         (p==1) ? x+=" member " : x+=" members ";
-        x+="of our reality.\n";
+        x+="of our reality.%^RESET%^\n";
         ret+=center(x);
         if(check_string_length(ret)) this_player()->eventPrint(""+ret+"");
         else print_long_string(this_player(),ret);

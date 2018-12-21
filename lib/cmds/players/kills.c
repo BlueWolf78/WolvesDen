@@ -12,21 +12,21 @@ mixed cmd(string args) {
     name = lower_case(this_player()->GetKeyName());
     killfile = "/save/kills/"+name[0..0]+"/"+name;
     if(!file_exists(killfile)) {
-        write("You have no kills to your name.");
+        write("%^YELLOW%^You have no kills to your name.%^RESET%^");
         return 1;
     }
     kills = restore_variable(read_file(killfile));
     if(!sizeof(kills)){
-        write("You have never harmed a living thing.");
+        write("%^YELLOW%^You have never harmed a living thing.%^RESET%^");
         return 1;
     }
-    ret = "You are " +this_player()->GetShort() + ", level " +
+    ret = "%^GREEN%^You are " +this_player()->GetShort() + "%^GREEN%^, level " +
         this_player()->GetLevel();
     if( (tmp = this_player()->GetClass()) ) 
         ret += " " + capitalize(tmp);
     else ret += " Drifter";
-    ret += " (" + this_player()->GetRace() + ")\n";
-    ret+= "Your list of victories comprises the following:\n\n";
+    ret += " (" + this_player()->GetRace() + ")%^RESET%^\n";
+    ret+= "%^YELLOW%^Your list of victories comprises the following:%^RESET%^\n\n";
     stats = map(keys(kills),
             (: sprintf("%:-20s: %:-1i", $1, 
                        kills[$1]) :));

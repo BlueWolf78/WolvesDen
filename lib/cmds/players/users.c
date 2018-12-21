@@ -22,7 +22,9 @@ int cmd(){
     }
     user_name = sort_array(user_name, "sort_names");
     ret = format_page(user_name, 4);
+    ret += "%^YELLOW%^";
     ret += sprintf("Total : %d", sizeof(user_name));
+    ret += "%^RESET%^";
     if(sizeof(ret) < __LARGEST_PRINTABLE_STRING__ ) write(ret);
     else this_player()->eventPage(ret);
     return 1;

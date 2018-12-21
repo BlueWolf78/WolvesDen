@@ -15,7 +15,7 @@ mixed cmd(string args) {
     string tmp;
     int len;
 
-    tmp = "You know the following spells:\n";
+    tmp = "%^YELLOW%^You know the following spells:%^RESET%^\n";
     foreach(string spell, int val in who->GetSpellBook()) {
         spells += ({ sprintf("%:-20s: %:-3d%%", spell, val) });
     }

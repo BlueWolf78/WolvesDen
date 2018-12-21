@@ -11,7 +11,7 @@ mixed cmd(string str) {
         mixed ret = this_player()->CanSpeak(0, TALK_LOCAL, "foo", str);
         if(intp(ret)) {
             this_player()->SetDefaultLanguage(str);
-            write("You are now speaking in "+capitalize(lower_case(str))+".");
+            write("%^GREEN%^You are now speaking in "+capitalize(lower_case(str))+".%^RESET%^");
             return 1;
         }
         else return ret;
@@ -22,15 +22,15 @@ mixed cmd(string str) {
     }
 
     if(this_player()->GetPolyglot()){
-        write("You understand all languages with 100% proficiency.");
+        write("%^GREEN%^You understand all languages with 100% proficiency.%^RESET%^");
     }
 
-    write("You speak: ");
+    write("%^YELLOW%^You speak: %^RESET%^");
     foreach(string key, int val in FluencyMap){
         write(capitalize(key)+" with "+val+"% proficiency.");
     }
-    write("Your current default language is: "+
-            this_player()->GetDefaultLanguage()+".");
+    write("%^GREEN%^Your current default language is: %^BOLD%^"+
+            this_player()->GetDefaultLanguage()+".%^GREEN%^");
 
     return 1;
 }

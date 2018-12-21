@@ -93,20 +93,20 @@ int cmd(string str) {
     }
     screenSize = ((int*)this_player()->GetScreen())[0];
     formatString = calculateFormatString(screenSize);
-    bar = "--------------------------------------------------------------------------";
-    for(i = 75; i < screenSize; i++) bar += "-";
+    bar = "%^YELLOW%^--------------------------------------------------------------------------%^RESET%^";
+    for(i = 75; i < screenSize; i++) bar += "%^YELLOW%^-%^RESET%^";
     bar += "\n";
     msg = bar;
-    tmp1 = " " + maxi + ((maxi != 1) ? " people" : " person") + " in current sort ";
+    tmp1 = "%^GREEN%^ " + maxi + ((maxi != 1) ? " people" : " person") + " in current sort ";
     tmp2 = query_people_time() + " ";
     i = sizeof(tmp1) + sizeof(tmp2);
     msg += tmp1;
     for(i = sizeof(tmp1) + sizeof(tmp2) + 1; i < screenSize; i++) msg += " ";
-    msg += tmp2 + "\n";
+    msg += tmp2 + "%^RESET%^\n";
     msg += bar;
     msg += implode(map_array(display, "map_info", this_object(), formatString), "\n") + "\n";
     msg += bar;
-    msg += center(mud_name(), screenSize - 1);
+    msg += center("%^BOLD%^%^CYAN%^"+mud_name()+"%^RESET%^", screenSize - 1);
     if(!check_string_length()) mflag = 1;
     if(!mflag && check_string_length(msg)) this_player()->eventPrint(msg);
     else print_long_string(this_player(),msg);
