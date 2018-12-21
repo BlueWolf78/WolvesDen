@@ -50,23 +50,28 @@ static void create(){
  * ensure to activate code in /lib/lvs/level.c as well
  */
 void AddCustomizationPoints(){
-     int x, y, z;
+     int x, y, z, s_size;
      string *stats;
      string str;
 
      x = this_player()->GetCustomStats(); //don't blow away players custom stat points if not used
        
      stats = this_player()->GetStats();
-        foreach(str in stats){
-            x += this_player()->GetBaseStatLevel(str);
-            y++;
-        }
-        write("x is "+x+" y is "+y+"\n");
-        if(x <= ((y*100)-15)){ //stat points not greater than 100
-            z = random(15)+1;
-            write("z is "+z+"\n");
-        }else{ z = random(x)+1;
-        }
+     if(sizeof(stats)>0) { s_size = sizeof(stats) / sizeof(stats[0]); }
+	if(s_size>0){
+           foreach(str in stats){
+              x += this_player()->GetBaseStatLevel(str);
+              y++;
+           }
+	
+           write("x is "+x+" y is "+y+"\n");
+           if(x <= ((y*100)-15)){ //stat points not greater than 100
+              z = random(15)+1;
+              write("z is "+z+"\n");
+           }
+	   else{ z = random(x)+1; } 
+	}
+	else { z = 15; }
      Custom = ([ "stats" : z, "deviations" : 0, "deviating" : 0, ]);
 }
 

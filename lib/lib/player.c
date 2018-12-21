@@ -136,14 +136,16 @@ varargs mixed eventDisplayStatus(int simple){
         str = "%^YELLOW%^hp: %^RED%^" + hp + "%^RESET%^/" + max_hp;
     else str = "%^YELLOW%^hp: %^RESET%^" + hp + "/" + max_hp;
     if( percent(mp, max_mp) < 20.0 )
-        str += "  %^BLUE%^mp: %^RED%^" + mp + "%^RESET%^/" + max_mp;
-    else str += "  %^BLUE%^mp: %^RESET%^" + mp + "/" + max_mp;
+        str += "  %^BOLD%^%^BLUE%^mp: %^RED%^" + mp + "%^RESET%^/" + max_mp;
+    else str += "  %^BOLD%^%^BLUE%^mp: %^RESET%^" + mp + "/" + max_mp;
     if( percent(sp, max_sp) < 20.0 )
-        str += "  %^GREEN%^sp: %^RED%^" + sp + "%^RESET%^/" + max_sp;
-    else str += "  %^GREEN%^sp: %^RESET%^" + sp + "/" + max_sp;
+        str += "  %^BOLD%^%^GREEN%^sp: %^RED%^" + sp + "%^RESET%^/" + max_sp;
+    else str += "  %^BOLD%^GREEN%^sp: %^RESET%^" + sp + "/" + max_sp;
     if(!simple){
-//        str += "  %^MAGENTA%^xp: %^RESET%^" + xp;
-        str += "  %^CYAN%^qp: %^RESET%^" + qp;
+	if(XP_ADVANCE) {
+       	   str += "  %^BOLD%^%^MAGENTA%^xp: %^RESET%^" + xp;
+	}
+        str += "  %^BOLD%^%^CYAN%^qp: %^RESET%^" + qp;
     }
     if(!simple){
         message("status", str, this_object());
@@ -367,9 +369,9 @@ int Setup(){
         if( councilp() ) AddChannel( ({ "council" }) );
         AddChannel(GetClass());
 
-        jeans = new("/domains/default/armor/jeans");
-        shirt = new("/domains/default/armor/shirt");
-        book = new("/domains/default/obj/handbook");
+        jeans = new("/domains/std/armor/s_c_breeches");
+        shirt = new("/domains/std/armor/s_c_ls_shirt");
+        book = new("/domains/std/obj/handbook");
 
         if(jeans) jeans->eventMove(this_object());
         if(shirt) shirt->eventMove(this_object());
@@ -377,7 +379,7 @@ int Setup(){
             book->eventMove(this_object());
         else if(book) book->eventMove(ROOM_FURNACE);
 
-        if(jeans) this_object()->eventForce("wear jeans");
+        if(jeans) this_object()->eventForce("wear breeches");
         if(shirt) this_object()->eventForce("wear shirt");
         SetProperty("brand_spanking_new",0);
     }
@@ -392,11 +394,11 @@ int Setup(){
             this_object()->SetProperty("wizmapping", 1);
         }
         else this_object()->SetProperty("wizmapping", 0);
-        robe = new("/domains/default/armor/robe");
-        hat = new("/domains/default/armor/wizard_hat");
+        robe = new("/domains/std/armor/cre_robe");
+        hat = new("/domains/std/armor/cre_hat");
         staff = new("/secure/obj/staff");
-        book = new("/domains/default/obj/guide");
-        book2 = new("/domains/default/obj/handbook");
+        book = new("/domains/std/obj/guide");
+        book2 = new("/domains/std/obj/handbook");
 
         if(robe) robe->eventMove(this_object());
         if(hat) hat->eventMove(this_object());
@@ -514,7 +516,7 @@ string SetShort(string irrelevant){
     string title, tmp;
     int i;
 
-    if( high_mortalp() ) title = "High mortal ";
+    if( high_mortalp() ) title = "High Mortal ";
     else title = "";
     if(title && title != "") title += " $N ";
     else title = "$N ";
