@@ -88,34 +88,34 @@ static private mapping localchans = ([
                 ]);
 
 static private mapping tags = ([
-        "intermud"    : "%^B_BLACK%^WHITE%^",
-        "muds"        : "%^B_BLACK%^WHITE%^",
-        "connections" : "%^B_BLACK%^BOLD%^WHITE%^",
+        "intermud"    : "%^WHITE%^",
+        "muds"        : "%^WHITE%^",
+        "connections" : "%^BOLD%^WHITE%^",
         "death"       : "%^BOLD%^RED%^",
         "cre"         : "%^BOLD%^GREEN%^",
         "admin"       : "%^BOLD%^MAGENTA%^",
-        "newbie"      : "%^BOLD%^B_YELLOW%^",
-        "gossip"      : "%^BOLD%^B_BLUE%^",
+        "newbie"      : "%^BOLD%^YELLOW%^",
+        "gossip"      : "%^BOLD%^BLUE%^",
 
         "ds"          : "%^YELLOW%^",
         "dchat"	 :"%^CYAN%^",
         "intergossip" : "%^GREEN%^",
         "intercre"    : "%^ORANGE%^",
 
-        "ibuild2"      : "%^B_RED%^%^YELLOW%^",
-        "ichat2"       : "%^B_RED%^%^GREEN%^",
-        "pchat2"       : "%^B_RED%^%^BOLD%^GREEN%^",
-        "i2game2"      : "%^B_BLUE%^",
-        "i2chat2"      : "%^B_GREEN%^",
-        "i3chat2"      : "%^B_RED%^",
-        "i2code2"      : "%^B_YELLOW%^%^RED%^",
-        "i2news2"      : "%^B_YELLOW%^%^BLUE%^",
-        "imudnews2"    : "%^B_YELLOW%^%^CYAN%^",
-        "irc2"         : "%^B_BLUE%^%^GREEN%^",
-        "ifree2"         : "%^B_BLUE%^%^GREEN%^",
+        "ibuild2"      : "%^YELLOW%^",
+        "ichat2"       : "%^GREEN%^",
+        "pchat2"       : "%^BOLD%^GREEN%^",
+        "i2game2"      : "%^BLUE%^",
+        "i2chat2"      : "%^GREEN%^",
+        "i3chat2"      : "%^RED%^",
+        "i2code2"      : "%^RED%^",
+        "i2news2"      : "%^BLUE%^",
+        "imudnews2"    : "%^CYAN%^",
+        "irc2"         : "%^GREEN%^",
+        "ifree2"       : "%^GREEN%^",
 
         "default"     : "%^BOLD%^BLUE%^",
-        "default-IMC2" : "%^BOLD%^WHITE%^%^B_BLUE%^",
+        "default-IMC2" : "%^BOLD%^WHITE%^",
         ]);
 
 static void Setup(){
